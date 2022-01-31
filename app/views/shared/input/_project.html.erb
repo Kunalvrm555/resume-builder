@@ -1,8 +1,7 @@
 <%= render 'shared/edit_sub_section' do %>
-    <%= project.text_field :school, value: project.object.school, placeholder: "School" %><br/>
-    <%= project.text_field :draiegree, value: project.object.degree, placeholder: "Degree" %><br/>
-    <%= project.date_field :start, value: project.object.start, placeholder: "Start date" %><br/>
-    <%= project.date_field :end, value: project.object.end, placeholder: "End date" %><br/>
-    <%= project.text_area :description, value: project.object.description, placeholder: "Description" %><br/>
+    <%= project.text_field :title, value: project.object.title, placeholder: "Title" %><br/>
+    <%= project.text_field :url, value: project.object.url, placeholder: "Link to the project" %><br/>
+    <%= project.text_area :stack, value: project.object.techstack, placeholder: "Skills used" %><br/>
+    <%= project.text_area :description, value: project.object.description, placeholder: "Project description" %><br/>
     <%= render 'shared/input/buttons/delete', type: project %>
 <% end %>

@@ -42,11 +42,10 @@ ActiveRecord::Schema.define(version: 202120131184652) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "degree"
-    t.string "school"
+    t.string "title"
+    t.string "url"
+    t.string "stack"
     t.text "description"
-    t.date "start"
-    t.date "end"
     t.bigint "profile_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

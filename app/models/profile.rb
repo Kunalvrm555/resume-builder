@@ -10,6 +10,6 @@ class Profile < ApplicationRecord
         education[:degree].blank? or education[:school].blank? or education[:start].blank? or education[:end].blank?
     end
     def reject_project_create(education)
-        project[:degree].blank? or project[:school].blank? or project[:start].blank? or project[:end].blank?
+        project[:title].blank? or project[:description].blank? or project[:stack].blank? or project[:url].blank?
     end
 end
