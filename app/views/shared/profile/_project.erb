@@ -1,8 +1,8 @@
 <div class="mt-8 text-gray-500">
-    <%= render 'shared/profile/item_with_description', 
+    <%= render 'shared/profile/project_description', 
         title: project.title,
-        subtitle: project.url,
-        description: project.stack
+        project_link: project.url,
+        skills: project.stack,
         description: project.description
         
     %>
