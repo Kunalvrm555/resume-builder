@@ -38,7 +38,8 @@ class TailwindInputBuilder < ActionView::Helpers::FormBuilder
             options.reverse_merge(
                 class: "appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent flex-1 my-2", 
                 required: true, 
-                max: Date.today
+               
+                max: Date.parse('20301231')    # expected date of completion can be in future
             )
         )
     end
