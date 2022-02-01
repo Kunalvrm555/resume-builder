@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
 
     before_action :logged_in_user, only: [:update]
     before_action :correct_user,   only: [:update]
+    # before_action
 
     def update
         updated_profile_params = update_array_attributes_in_params(profile_params)
