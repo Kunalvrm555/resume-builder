@@ -11,4 +11,9 @@ module HomeHelper
     def get_array_from_comma_separated_string(str)
         str.strip.split(',')
     end
+
+    def get_image_hash(img)
+        img
+    end
+
 end
