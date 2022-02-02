@@ -12,8 +12,4 @@ module HomeHelper
         str.strip.split(',')
     end
 
-    def get_image_hash(img)
-        img
-    end
-
 end
