@@ -4,12 +4,11 @@ class ProfilesController < ApplicationController
 
     before_action :logged_in_user, only: [:update]
     before_action :correct_user,   only: [:update]
-    # before_action
-
+    
     def update
         updated_profile_params = update_array_attributes_in_params(profile_params)
         @profile = Profile.find(params[:id])
-        if @profile.update(updated_profile_params)
+        if @profile.update_attribute(:avatar,params[:profile][:avatar])
             flash[:success] = "Profile updated successfully."
             redirect_to edit_url
         else
@@ -26,7 +25,7 @@ class ProfilesController < ApplicationController
 
     private
         def profile_params
-            params.require(:profile).permit(:name, :job_title, :total_experience, :overview, 
+            params.require(:profile).permit(:name, :avatar, :job_title, :total_experience, :overview, 
                 :career_highlights, :primary_skills, :secondary_skills,
                 :educations_attributes => [ :id, :school, :degree, :description, :start, :end, :_destroy],
                 :projects_attributes => [ :id, :title, :url, :stack, :description, :_destroy]

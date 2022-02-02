@@ -1,0 +1,12 @@
+<div class="items-start my-10">
+        <% if @profile.avatar.attached? %>
+            <%= image_tag @profile.avatar, id: "image-preview", style: "border: 2px solid blue ;rounded-full; max-width:200px" %>
+        <% else %>
+            <%= image_tag gravatar_url_for(current_user),id: "image-preview", style:"max-width:200px" %>
+        <% end %>
+    <%= form_for(@profile) do |f| %>
+<div class=" my-10">
+        <%= f.file_field :avatar  %>
+    <% end %>
+</div>
+</div>
