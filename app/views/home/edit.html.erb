@@ -14,7 +14,7 @@
         <div class="items-start">
             <!--TODO : make a seperate file -->
             <% if @profile.avatar.attached? %>
-                <%#= image_tag @profile.avatar, id: "image-preview", style:"max-width:200px",class: "shadow-xl scale-75 rounded-full absolute w-1/2 transform -translate-x-8 -translate-y-36" %>
+                <%= image_tag @profile.avatar, id: "image-preview", style:"max-width:200px",class: "shadow-xl scale-75 rounded-full absolute w-1/2 transform -translate-x-8 -translate-y-36" %>
             <% else %>
                 <%= image_tag gravatar_url_for(current_user),id: "image-preview", style:"max-width:200px",class: "shadow-xl scale-75 rounded-full absolute w-1/2 transform -translate-x-8 -translate-y-36" %>
             <% end %>
