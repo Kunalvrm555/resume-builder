@@ -1,12 +1,18 @@
 //= require clipboard
 //= require jquery
 //= require jquery_ujs
-alert("HEY");
+
+const { profile } = require("webpack/lib/node/nodeConsole");
+
+// alert("HEY");
 $(document).ready(function(){  
   
     var clipboard = new Clipboard('.clipboard-btn');
-    console.log(clipboard);
-      
+   
+    var my_var = profile.name 
+    console.log(my_var)
+   clipboard.text =  
+    console.log("hello")   
   });
 
 // var $main = $('main');
