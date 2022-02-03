@@ -5,7 +5,7 @@
         <div class="flex justify-end items-center w-full mb-4">
             <div>
                 <%= javascript_include_tag 'copy_link' %>
-                <button class="clipboard-btn" type = button data-clipboard-text = "kunal " > Copy to Clipboard </button>
+                <button class="clipboard-btn" type = button data-clipboard-text = "<%= root_url + profile_path(@profile) %>" > Copy to Clipboard </button>
                 <%= render 'shared/input/buttons/secondary', color: "yellow", label: "Preview", href: profile_path(@profile) %>
                 <%= f.submit "Save", class: "flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-green-600 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200" %><br/>
             </div>
@@ -14,9 +14,9 @@
         <div class="items-start">
             <!--TODO : make a seperate file -->
             <% if @profile.avatar.attached? %>
-                <%= image_tag @profile.avatar, id: "image-preview", style:"max-width:200px",class: "shadow-xl scale-75 rounded-full absolute w-1/2 transform -translate-x-8 -translate-y-36" %>
+                <%#= image_tag @profile.avatar, id: "image-preview", style:"max-width:200px",class: "shadow-xl scale-75 rounded-full absolute w-1/2 transform -translate-x-8 -translate-y-36" %>
             <% else %>
-                <%= image_tag gravatar_url_for(current_user),id: "image-preview", style:"max-width:200px",class: "shadow-xl rounded-full absolute w-1/2 transform -translate-y-1/2" %>
+                <%= image_tag gravatar_url_for(current_user),id: "image-preview", style:"max-width:200px",class: "shadow-xl scale-75 rounded-full absolute w-1/2 transform -translate-x-8 -translate-y-36" %>
             <% end %>
             <!--TODO : make a seperate file -->
             <div class="flex flex-col md:flex-row md:mt-12 md:pb-8">
