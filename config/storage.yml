@@ -24,9 +24,9 @@ local:
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 microsoft:
   service: AzureStorage
-  storage_account_name: kunalvrm555
-  storage_access_key: <%= Rails.application.credentials.dig(:azure_storage, :storage_access_key) %>
-  container: resumebuilder-app
+  storage_account_name: "kunalvrm555"
+  storage_access_key:  "j21+tvvgcG0qOeuT+PWiuP1AudeaNCzOXZJu9HYlNQnOmnMZkfe2kTBTgQrkqWyqA2NI8YDIs6WDQVdCNVEKkQ=="
+  container: "resumebuilder-app"
 
 # mirror:
 #   service: Mirror
