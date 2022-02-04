@@ -1,28 +1,32 @@
 <%= render 'shared/header' %>
 
-<main data-profile-id = "KUNAL" class="py-10 max-w-7xl mx-auto px-4 sm:px-8">
+<main class="py-10 max-w-7xl mx-auto px-4 sm:px-8">
     <%= form_for(@profile, builder: TailwindInputBuilder) do |f| %>
         <div class="flex justify-end items-center w-full mb-4">
             <div>
+                <!-- COPY LINK BUTTON -->
                 <%= javascript_include_tag 'copy_link' %>
-                <button class="clipboard-btn" type = button data-clipboard-text = "<%= root_url + profile_path(@profile) %>" > Copy to Clipboard </button>
-                <%= render 'shared/input/buttons/secondary', color: "yellow", label: "Preview", href: profile_path(@profile) %>
+                <button type = "button" class="clipboard-btn" data-clipboard-text = "<%= root_url + profile_path(@profile) %>" type="button" id="btn1">Copy Link </button>
+                
+                <!-- PROFILE PREVIEW BUTTON -->
+                <%= render 'shared/input/buttons/secondary',target: "_blank", color: "yellow", label: "Preview", href: profile_path(@profile) %>
+                
+                <!-- SAVE CHANGES BUTTON -->
                 <%= f.submit "Save", class: "flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-green-600 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200" %><br/>
             </div>
         </div>
 
         <div class="items-start">
-            <!--TODO : make a seperate file -->
-            <% if @profile.avatar.attached? %>
-                <%= image_tag @profile.avatar, id: "image-preview", style:"max-width:200px",class: "shadow-xl scale-75 rounded-full absolute w-1/2 transform -translate-x-8 -translate-y-36" %>
-            <% else %>
-                <%= image_tag gravatar_url_for(current_user),id: "image-preview", style:"max-width:200px",class: "shadow-xl scale-75 rounded-full absolute w-1/2 transform -translate-x-8 -translate-y-36" %>
+            <!-- PROFILE PICTURE HERE-->
+            <%= render "shared/profile/profile_picture", image: @profile.avatar   do  %>
+                    <!-- -->
             <% end %>
-            <!--TODO : make a seperate file -->
             <div class="flex flex-col md:flex-row md:mt-12 md:pb-8">
                 <div class="md:border-r border-gray-300 w-80 text-xl font-semibold pt-12">
-                    Profile picture
+                    &nbsp
+                    <h2 > &nbsp &nbsp &nbsp Profile picture </h2>
                 </div>
+            <!-- -->
                 <div class="w-full md:px-8 md:pt-4">
                     <%= f.file_field :avatar  %>
                 </div>

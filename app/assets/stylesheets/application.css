@@ -5,3 +5,25 @@
   padding: 0;
   box-sizing: border-box;
 }
+#btn1 {
+border-width: none;
+border-radius: 0.5rem;
+color: rgb(255, 255, 255);
+padding-left: none;
+font-weight: 600;
+padding-left: 1rem;
+padding-right: 1rem;
+padding-top: 0.5rem;
+padding-bottom: 0.5rem;
+padding-right: none;
+background:rgb(0, 140, 255) ;
+font-family:Verdana;
+font-size: 1rem;
+line-height: 1.5rem;
+cursor:pointer;
+
+}
+
+#btn1:hover{
+  background:rgb(0, 108, 196) ;
+} 

@@ -1,0 +1,5 @@
+ <% if image.attached? %> 
+    <%= image_tag image,id: "image-preview", style:"max-width:200px",class: "shadow-xl scale-75 rounded-full absolute w-1/2 transform -translate-y-1/2"%>
+<% else %>
+    <%= image_tag gravatar_url_for(current_user),id: "image-preview", style:"max-width:200px",class: "shadow-xl scale-75 rounded-full absolute w-1/2 transform -translate-y-1/2" %>
+<% end %>
