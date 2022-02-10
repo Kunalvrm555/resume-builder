@@ -55,6 +55,18 @@ ActiveRecord::Schema.define(version: 202120131184652) do
     t.index ["profile_id"], name: "index_educations_on_profile_id"
   end
 
+  create_table "experiences", force: :cascade do |t|
+    t.string "company"
+    t.string "position"
+    t.text "description"
+    t.date "start"
+    t.date "end"
+    t.bigint "profile_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_experiences_on_profile_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "name"
     t.string "job_title"
@@ -92,6 +104,7 @@ ActiveRecord::Schema.define(version: 202120131184652) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "educations", "profiles"
+  add_foreign_key "experiences", "profiles"
   add_foreign_key "profiles", "users"
   add_foreign_key "projects", "profiles"
 end

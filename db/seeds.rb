@@ -11,3 +11,4 @@ user.profile = Profile.new
 user.save
 user.profile.educations.create
 user.profile.projects.create
+user.profile.experiences.create
