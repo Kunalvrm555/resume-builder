@@ -9,7 +9,6 @@ class ProfilesController < ApplicationController
         @profile = Profile.find(params[:id])
     end
 
-
     def update
         updated_profile_params = update_array_attributes_in_params(profile_params)
         @profile = Profile.find(params[:id])
@@ -34,8 +33,8 @@ class ProfilesController < ApplicationController
             params.require(:profile).permit(:name,:avatar, :job_title, :total_experience, :overview, 
                 :career_highlights, :primary_skills, :secondary_skills,
                 :educations_attributes => [ :id, :school, :degree, :description, :start, :end, :_destroy],
-                :projects_attributes => [ :id, :title, :url, :stack, :description, :_destroy],
-                :experiences_attributes=> [ :id, :company, :position, :start, :end, :description, :_destroy]
+                :experiences_attributes=> [ :id, :company, :position, :start, :end, :description,
+                     :projects, :_destroy]
             )
         end
 end

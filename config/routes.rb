@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   resources :profiles , only: [:update]
   resources :educations , only: [:new]
-  resources :projects , only: [:new]
-  resources :experiences , only: [:new]
+  resources :experiences, only: [:new] do
+    resources :projects, only: [:new]
+  end
   resources :users , except: [:new]
 end
